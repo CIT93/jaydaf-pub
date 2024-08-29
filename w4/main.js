@@ -43,7 +43,13 @@ function determineHouseSizePts(size) {
   }
 
 function displayOutput() {
-  
+  for (arr of cfpData)  {
+    console.log(arr)
+    const output = document.getElementById("output");
+    const newP = document.createElement("p");
+    newP.textContent = `You have ${arr[0]} members of your household and ${arr[1]} size of your house. Therefore, your household member score of ${arr[2]} and house size score of ${arr[3]} total ${arr[4]} points so far.`;
+    output.appendChild(newP)
+  }
 }
 
   start(5, "apt");
