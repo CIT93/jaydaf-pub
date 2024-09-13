@@ -42,12 +42,16 @@ function determineHouseSizePts(size) {
     const houseHoldPTS = determineHouseHoldPts(houseHoldMembers);
     const houseHoldSize = determineHouseSizePts(houseSize);
     const total = houseHoldPTS + houseHoldSize;
+    const firstName = FORM.firstname.value;
+    const lastName = FORM.lastname.value;
     cfpData.push({
       hMem: houseHoldMembers,
       hSize: houseSize,
       hHPTS: houseHoldPTS,
       hHSize: houseHoldSize,
-      hTotal: total
+      hTotal: total,
+      firstN: firstName,
+      lastN: lastName
     });
   }
 
@@ -59,10 +63,10 @@ function determineHouseSizePts(size) {
       const newH2 = document.createElement("h2");
       newH2.textContent = `Carbon Footprint ${obj.hTotal}`;
       const newH3 = document.createElement("h3");
-      newH3.textContent = `Based on number in and size of home`;
+      newH3.textContent = `Hello ${obj.firstN} ${obj.lastN},`;
       const newP = document.createElement("p");
-      newP.textContent = `This number is based on the number of people in the house of ${obj.hMem} (score:${obj.hHPTS}).`;
-      newP.textContent += ` and a ${obj.hSize} size of home (score:${obj.hHSize}).`;
+      newP.textContent = `Your total score is based on ${obj.hMem} members of your household (score:${obj.hHPTS})`;
+      newP.textContent += ` and a ${obj.hSize} size of your home (score:${obj.hHSize}).`;
       OUTPUT.appendChild(newH2);
       OUTPUT.appendChild(newH3);
       OUTPUT.appendChild(newP);
@@ -76,7 +80,7 @@ FORM.addEventListener("submit", function(e){
   const lastName = FORM.lastname.value;
   const houseMembers = parseInt(FORM.housem.value);
   const houseSize = FORM.houses.value;
-  start(houseMembers, houseSize);
+  start(houseMembers, houseSize, firstName, lastName);
   displayOutput();
   FORM.reset();
 })
