@@ -1,7 +1,4 @@
-const TBL = document.getElementById("tab-data");
-const table = renderTblHead()
-
-function renderTblHead(data) {
+function renderTblHead() {
     const table = document.createElement("table");
     const thead = document.createElement("thead");
     const tr = document.createElement("tr");
@@ -16,9 +13,9 @@ function renderTblHead(data) {
     return table
   }
   
-  function renderTbl(data) { 
+  function renderTbl(data, table) { 
+    const tbody = document.createElement("tbody");
     data.forEach(function(item) {
-      const tbody = document.createElement("tbody");
       const tr = document.createElement("tr");
       const properties = [item.firstN, item.hMem, item.hSize, item.hTotal];
       properties.forEach(function(text) {
@@ -26,6 +23,7 @@ function renderTblHead(data) {
         td.textContent = text;
         tr.appendChild(td);
       });
+    properties.splice(0, properties.length);
     const td = document.createElement("td");
     const btnEdit = document.createElement("button");
     btnEdit.textContent = "Edit"
@@ -35,9 +33,8 @@ function renderTblHead(data) {
     td.appendChild(btnDel);
     tr.appendChild(td);
     tbody.appendChild(tr);
-    table.appendChild(tbody);
     });
-    TBL.appendChild(table);
+    table.appendChild(tbody);
   }
 
   export {renderTbl, renderTblHead};

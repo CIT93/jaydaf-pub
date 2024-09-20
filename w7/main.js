@@ -4,6 +4,8 @@ import { determineHouseSizePts, determineHouseHoldPts } from "./calculate.js";
 const FORM = document.getElementById("form");
 const OUTPUT = document.getElementById("output");
 const cfpData = [];
+const TBL = document.getElementById("tab-data");
+
   function start(houseHoldMembers, houseSize) {
     const houseHoldPTS = determineHouseHoldPts(houseHoldMembers);
     const houseHoldSize = determineHouseSizePts(houseSize);
@@ -35,8 +37,10 @@ FORM.addEventListener("submit", function(e){
   const houseSize = FORM.houses.value;
   start(houseMembers, houseSize, firstName, lastName);
   OUTPUT.innerHTML = "";
-  renderTblHead();
-  renderTbl(cfpData);
+  TBL.innerHTML = "";
+  const table = renderTblHead();
+  renderTbl(cfpData, table);
+  TBL.appendChild(table);
   FORM.reset();
 })
 
