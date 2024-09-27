@@ -1,7 +1,11 @@
 const TBL = document.getElementById("tab-data");
+const FORM = document.getElementById("form");
 
-function renderTblHead() {
+
+function renderTblHead(data) {
   const table = document.createElement("table");
+  const array = String(data);
+  if (array !== "") {
     const thead = document.createElement("thead");
     const tr = document.createElement("tr");
     const headingTextArr = ["Name", "HouseHold", "HouseSize", "Footprint", "Actions"];
@@ -14,6 +18,7 @@ function renderTblHead() {
     table.appendChild(thead);
     return table
   }
+}
 
   function renderTblBttns(index, data) {
     const td = document.createElement("td");
@@ -27,7 +32,14 @@ function renderTblHead() {
       data.splice(index, 1); 
       renderTbl(data);
     })
-    btnEdit.addEventListener("click", function(e) {})
+    btnEdit.addEventListener("click", function(e) {
+      FORM[1].value = String(data[index].firstN);
+      FORM[2].value = String(data[index].lastN);
+      FORM[3].value = String(data[index].hMem);
+      FORM[4].value = String(data[index].hSize);
+      data.splice(index, 1);
+      renderTbl(data); 
+    })
     return td
   }
 
