@@ -4,8 +4,6 @@ const FORM = document.getElementById("form");
 
 function renderTblHead(data) {
   const table = document.createElement("table");
-  const array = String(data);
-  if (array !== "") {
     const thead = document.createElement("thead");
     const tr = document.createElement("tr");
     const headingTextArr = ["Name", "HouseHold", "HouseSize", "Footprint", "Actions"];
@@ -17,7 +15,6 @@ function renderTblHead(data) {
     thead.appendChild(tr);
     table.appendChild(thead);
     return table
-  }
 }
 
   function renderTblBttns(index, data) {
@@ -62,12 +59,14 @@ function renderTblHead(data) {
   return tbody
   }
   
-  function renderTbl(data) { 
-    const table = renderTblHead();
-    const tbody = renderTblRow(data);
+  function renderTbl(data) {
     TBL.innerHTML = "";
-    table.appendChild(tbody);
-    TBL.appendChild(table);
+    if (data.length !== 0) {
+      const table = renderTblHead();
+      const tbody = renderTblRow(data);
+      table.appendChild(tbody);
+      TBL.appendChild(table);
+    }
   }
 
   export {renderTbl};
