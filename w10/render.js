@@ -1,7 +1,7 @@
 import { FORM, TBL } from "./global.js";
 import { saveLS } from "./storage.js";
 
-const renderTblHead = function() {
+const renderTblHead = () => {
   const table = document.createElement("table");
     const thead = document.createElement("thead");
     const tr = document.createElement("tr");
@@ -17,13 +17,13 @@ const renderTblHead = function() {
 }
 
 
-const onUpdate = function(index, data) {
+const onUpdate = (index, data) => {
   data.splice(index, 1);
   saveLS(data);
   renderTbl(data); 
 }
 
-  const renderTblBttns = function(index, data) {
+  const renderTblBttns = (index, data) => {
     const td = document.createElement("td");
     const btnEdit = document.createElement("button");
     btnEdit.textContent = "Edit"
@@ -31,10 +31,10 @@ const onUpdate = function(index, data) {
     btnDel.textContent = "Del"
     td.appendChild(btnEdit);
     td.appendChild(btnDel);
-    btnDel.addEventListener("click", function(e) {
+    btnDel.addEventListener("click", e => {
     onUpdate(index, data);
     })
-    btnEdit.addEventListener("click", function(e) {
+    btnEdit.addEventListener("click", e => {
       FORM[1].value = String(data[index].firstN);
       FORM[2].value = String(data[index].lastN);
       FORM[3].value = String(data[index].hMem);
@@ -44,7 +44,7 @@ const onUpdate = function(index, data) {
     return td
   }
 
-  const renderTblRow = function(data) {
+  const renderTblRow = data => {
   const tbody = document.createElement("tbody")
     data.forEach(function(obj, index) {
       console.log(index);
@@ -63,7 +63,7 @@ const onUpdate = function(index, data) {
   return tbody
   }
   
-  const renderTbl = function(data) {
+  const renderTbl = data => {
     TBL.innerHTML = "";
     if (data.length !== 0) {
       const table = renderTblHead();
