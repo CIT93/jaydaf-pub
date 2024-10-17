@@ -5,7 +5,7 @@ const renderTblHead = () => {
   const table = document.createElement("table");
     const thead = document.createElement("thead");
     const tr = document.createElement("tr");
-    const headingTextArr = ["Name", "HouseHold", "HouseSize", "Footprint", "Actions"];
+    const headingTextArr = ["Name", "HouseHold", "HouseSize", "FoodType", "Footprint", "Actions"];
     headingTextArr.forEach((text) => {
       const th = document.createElement("th");
       th.textContent = text;
@@ -38,7 +38,8 @@ const onUpdate = (index, data) => {
       FORM[1].value = String(data[index].first);
       FORM[2].value = String(data[index].last);
       FORM[3].value = String(data[index].houseMembers);
-      FORM[4].value = String(data[index].houseSize); //adjusted each of these values for editing
+      FORM[4].value = String(data[index].houseSize);
+      FORM[5].value = String(data[index].foodType);
       onUpdate(index, data); 
     })
     return td
@@ -50,7 +51,7 @@ const onUpdate = (index, data) => {
       console.log(index);
       const tr = document.createElement("tr");
       for(const [key, value] of Object.entries(obj)){
-        if (key === "first" || key === "houseMembers" || key === "houseSize" || key === "total") { //adjusted each of these values for rendering
+        if (key === "first" || key === "houseMembers" || key === "houseSize" || key === "foodType" || key === "total") { 
           const td = document.createElement("td");
           td.textContent = value;
           tr.appendChild(td);
