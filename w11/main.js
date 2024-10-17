@@ -35,3 +35,5 @@ const validateField = event => {
 
 FNAME.addEventListener('blur', validateField);
 LNAME.addEventListener('blur', validateField);
+
+renderTbl(cfpData); //table now renders on page refresh
