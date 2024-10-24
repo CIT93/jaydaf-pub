@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 12 - Workout</title>
+    <script type="module" defer src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="form">
+        <fieldset id="fieldset">
+            <legend>Time to get FIT!</legend>
+            <div>
+                <label>Type of Exercise:</label>
+                <select name="exerciseType" required>
+                    <option value="">---Select a workout---</option>
+                    <option value="pushUps">Pushups</option>
+                    <option value="curlUps">Curlups</option>
+                    <option value="pullUps">Pullups</option>
+                    <option value="jumpingJacks">Jumping Jacks</option>
+                </select>
+            </div>
+            <div>
+                <label>Target Number of Reps:</label>
+                <input type="number" name="repNum" min="1" max="30" required>
+            </div>
+            <div>
+                <label>Time in Seconds:</label>
+                <input type="number" name="workoutTime" min="1" required>
+            </div>
+            <button type="submit">Submit</button>
+        </fieldset>
+    </form>
+    <div id="output">Submit to Start!</div>
+</body>
+</html>
