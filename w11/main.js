@@ -1,6 +1,5 @@
 import { FORM, FNAME, LNAME, SUBMIT } from "./global.js";
 import { renderTbl} from "./render.js";
-import { determineHouseSizePts, determineHouseHoldPts } from "./calculate.js";
 import { cfpData, saveLS } from "./storage.js";
 import { FP } from "./fp.js";
 
@@ -36,4 +35,4 @@ const validateField = event => {
 FNAME.addEventListener('blur', validateField);
 LNAME.addEventListener('blur', validateField);
 
-renderTbl(cfpData); //table now renders on page refresh
+renderTbl(cfpData); 
