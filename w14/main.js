@@ -6,20 +6,31 @@ function renderPhotos(photos) {
     });
 }
 
-async function getPhotos(url) {
+async function getPhotos() {
     try {
-        const response = await fetch(url);
+        const response = await fetch("https://jsonplaceholder.typicode.com/photos");
         const data = await response.json();
-        return data;
+        if (!data.length) {
+            console.log("Error on return value");
+        } else {
+            onSuccess(data);
+        }
     } catch(error) {
-        console.log("Error", error)
+        onError(error);
     }
 }
 
-async function start(url) {
-    const photos = await getPhotos(url);
+async function start() {
+    getPhotos();
+}
+
+function onSuccess(photos) {
     renderPhotos(photos);
 }
 
-start("https://jsonplaceholder.typicode.com/photos");
+function onError(error) {
+    console.log("Error", error);
+}
+
+start();
 //start("https://error.bad");
