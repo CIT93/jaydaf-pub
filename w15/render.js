@@ -1,5 +1,5 @@
 import { FORM, TBL } from "./global.js";
-import { saveLS, calculateAvg } from "./storage.js";
+import { saveLS } from "./storage.js";
 
 const renderTblHead = () => {
   const table = document.createElement("table");
@@ -22,7 +22,7 @@ const onUpdate = (index, data) => {
   data.splice(index, 1);
   saveLS(data);
   renderTbl(data);
-  addRow("cfpTable"); 
+  //addRow("cfpTable"); 
 }
 
   const renderTblBttns = (index, data) => {
@@ -65,17 +65,16 @@ const onUpdate = (index, data) => {
     return tbody;
   };
 
-const addRow = tableID => {
-  let avg = calculateAvg();
+const addRow = (tableID, data) => {
+  let reduceData = data.reduce((sum, ea) => sum + ea.total, 0);
   let tableRef =  document.getElementById(tableID);
   let newRow = tableRef.insertRow(-1);
   let newTitleCell = newRow.insertCell(0);
   let newTitleText = document.createTextNode("Average Footprint")
   let newAvgCell = newRow.insertCell(-1);
-  let newAvgText = document.createTextNode(`${avg}`)
+  let newAvgText = document.createTextNode(`${Math.floor(reduceData / data.length)}`)
   newTitleCell.appendChild(newTitleText);
   newAvgCell.appendChild(newAvgText);
-  //console.log(avg);
 }
   
   const renderTbl = data => {
@@ -85,6 +84,7 @@ const addRow = tableID => {
       const tbody = renderTblRow(data);
       table.appendChild(tbody);
       TBL.appendChild(table);
+      addRow("cfpTable", data);
     }
   }
 

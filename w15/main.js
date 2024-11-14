@@ -11,7 +11,7 @@ FORM.addEventListener("submit", e => {
     cfpData.push(fpObj);
     saveLS(cfpData);
     renderTbl(cfpData);
-    addRow("cfpTable"); 
+    //addRow("cfpTable"); 
     FORM.reset();
   }
   else {
@@ -37,4 +37,4 @@ FNAME.addEventListener('blur', validateField);
 LNAME.addEventListener('blur', validateField);
 
 renderTbl(cfpData); 
-addRow("cfpTable");
+//addRow("cfpTable");

@@ -14,20 +14,20 @@ const getLS = () => {
 
 const cfpData = getLS();
 
-const mappedDataArr = data => {
-    return data.map(data => data.total)
-}
+// const mappedDataArr = data => {
+//     return data.map(data => data.total)
+// }
 
-const mappedCfp = mappedDataArr(cfpData)
+// const mappedCfp = mappedDataArr(cfpData)
 
-const reduce = data => {
-    const reduceArr = data.reduce((sum, len) => sum + len, 0);
-    return reduceArr
-}
+// const reduce = data => {
+//     const reduceArr = data.reduce((sum, len) => sum + len, 0);
+//     return reduceArr
+// }
 
-const calculateAvg = () => {
-    let avg = reduce(mappedCfp) / mappedCfp.length;
-    return avg
-}
+// const calculateAvg = () => {
+//     let avg = reduce(mappedCfp) / mappedCfp.length;
+//     return avg
+// }
 
-export {cfpData, saveLS, getLS, calculateAvg};
+export {cfpData, saveLS, getLS };
