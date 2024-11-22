@@ -1,10 +1,11 @@
-import { FORM, FNAME, LNAME, SUBMIT } from "./global.js";
+import { FORM, FNAME, LNAME, SUBMIT, WATER, DISHWASH } from "./global.js";
 import { renderTbl } from "./render.js";
 import { cfpData, saveLS } from "./storage.js";
 import { FP } from "./fp.js";
 
 FORM.addEventListener("submit", e => {
   e.preventDefault();
+  DISHWASH.disabled = false;
   if (FNAME.value !== '' && LNAME.value !== '') {
     SUBMIT.textContent = "";
     const fpObj = new FP(
@@ -14,7 +15,8 @@ FORM.addEventListener("submit", e => {
       e.target.houses.value,
       e.target.food.value,
       e.target.foods.value,
-      parseInt(e.target.water.value)
+      parseInt(e.target.water.value),
+      e.target.dishWash.checked
     );
     cfpData.push(fpObj);
     saveLS(cfpData);
@@ -42,5 +44,13 @@ const validateField = event => {
 
 FNAME.addEventListener('blur', validateField);
 LNAME.addEventListener('blur', validateField);
+
+WATER.addEventListener("change", e  => {
+  if (WATER.value === "0") {
+    DISHWASH.disabled = true;
+  } else {
+    DISHWASH.disabled = false;
+  }
+});
 
 renderTbl(cfpData); 

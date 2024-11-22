@@ -1,5 +1,5 @@
-import { FORM, TBL } from "./global.js";
-import { saveLS } from "./storage.js";
+import { DISHWASH, FORM, TBL } from "./global.js";
+import { cfpData, saveLS } from "./storage.js";
 
 const renderTblHead = () => {
   const table = document.createElement("table");
@@ -17,6 +17,15 @@ const renderTblHead = () => {
     return table
 }
 
+const isChecked = data => {
+  if (data.waterPoints === 0) {
+    DISHWASH.disabled = true;
+  } else if (parseInt(data.totalWaterPoints) === parseInt(data.waterPoints) * 2) {
+    DISHWASH.checked = true;
+  } else {
+    DISHWASH.checked = false;
+  }
+}
 
 const onUpdate = (index, data) => {
   data.splice(index, 1);
@@ -42,7 +51,8 @@ const onUpdate = (index, data) => {
       FORM[4].value = String(data[index].houseSize);
       FORM[5].value = String(data[index].foodType);
       FORM[6].value = String(data[index].foodSource);
-      FORM[7].value = String(data[index].waterPoints); //needed to change water to waterPoints to match the value in the local storage table
+      FORM[7].value = String(data[index].waterPoints); 
+      FORM[8].value = isChecked(cfpData[index]);
       onUpdate(index, data); 
     })
     return td
