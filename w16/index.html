@@ -38,7 +38,7 @@
             <div>
                 <label>Evaluate your food choices:</label>
                 <select name="food" required>
-                    <option value="">---Food types---</option>
+                    <option value="">---Food Types---</option>
                     <option value="dailyMeat">Domestic meat daily</option>
                     <option value="fewTimesMeat">Domestic meat a few times a week</option>
                     <option value="vegetarian">Vegetarian</option>
@@ -67,6 +67,17 @@
             <div>
                     <label>Do you have both a dishwasher and a washing machine?</label>
                     <input type="checkbox" id="dishWash" checked>
+            </div>
+            <div>
+                    <label>Determine how many household purchases you make each year:</label>
+                    <select name="purchase" id="purchase" required>
+                            <option value="">---How many new household purchases do you make in a year?---</option>
+                            <option value="10">More than 7 new pieces of furniture, electronics, or other gadgets</option>
+                            <option value="8">Between 5 and 7 items</option>
+                            <option value="6">Between 3 and 5 items</option>
+                            <option value="4">Less than 3 items</option>
+                            <option value="2">Almost nothing or only secondhand items</option>
+                    </select>
             </div>
             <button type="submit">Submit</button>
             <span id="submitError" class="error"></span>

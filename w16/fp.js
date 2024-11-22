@@ -1,5 +1,5 @@
 class FP {
-    constructor(first, last, houseMembers, houseSize, foodType, foodSource, waterConsum, isDishAndWash)  {
+    constructor(first, last, houseMembers, houseSize, foodType, foodSource, waterConsum, isDishAndWash, houseHoldPurchase)  {
         this.first = first;
         this.last = last;
         this.houseMembers = houseMembers;
@@ -8,6 +8,7 @@ class FP {
         this.foodSource = foodSource;
         this.waterPoints = waterConsum;
         this.isDishAndWash = isDishAndWash;
+        this.houseHoldPurPoints = houseHoldPurchase;
         this.calHouseHoldPoints();
         this.calHouseSizePoints();
         this.calFoodPoints();
@@ -72,7 +73,8 @@ class FP {
           this.houseSizePoints +
           this.foodPoints +
           this.foodSourcePoints +
-          this.totalWaterPoints;
+          this.totalWaterPoints +
+          this.houseHoldPurPoints;
     }
 }
 

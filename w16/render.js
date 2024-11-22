@@ -53,6 +53,7 @@ const onUpdate = (index, data) => {
       FORM[6].value = String(data[index].foodSource);
       FORM[7].value = String(data[index].waterPoints); 
       FORM[8].value = isChecked(cfpData[index]);
+      FORM[9].value = String(data[index].houseHoldPurPoints);
       onUpdate(index, data); 
     })
     return td

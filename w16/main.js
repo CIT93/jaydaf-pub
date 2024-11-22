@@ -16,7 +16,8 @@ FORM.addEventListener("submit", e => {
       e.target.food.value,
       e.target.foods.value,
       parseInt(e.target.water.value),
-      e.target.dishWash.checked
+      e.target.dishWash.checked,
+      parseInt(e.target.purchase.value)
     );
     cfpData.push(fpObj);
     saveLS(cfpData);
