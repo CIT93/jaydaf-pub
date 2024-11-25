@@ -1,0 +1,22 @@
+body {
+    background-color: darkseagreen;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+fieldset {
+    border: 2px solid;
+    border-radius: 5px;
+    border-color: rgb(40, 63, 50);
+}
+legend {
+    font-size: 2em;
+}
+table, th, td {
+    border: 1px solid;
+    padding: 5px;
+}
+tbody tr:nth-child(odd) {
+    background-color: pink;
+}
+span.error {
+    color: red;
+}

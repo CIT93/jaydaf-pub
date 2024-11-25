@@ -1,0 +1,5 @@
+1. I could add in another drop down menu for different flavors of drinks, since specifying a certain flavor of drink might affect the price of the drink I want to buy.
+2. I could look into adding in APIs to my webpage using the fetch function. Based on what's available, I might be able to import information from websites like Starbucks for accurate & updated information regarding the price of drinks, seasonal drink menus, and more.
+3. I could add further stylization to the webpage, like adding pictures or other features through CSS or HTML code. Any additional features would aim to make the webpage more user-friendly and easier to read at first glance.
+
+- For my final step, I decided to add in my first to-do item. I created a new drop-down menu for drink flavors in HTML that changes based on whether the user selects coffee or boba tea for their drink. The class module now calculates the value of the drink points based on the flavor of drink, not just the concept of the drink itself. The edit button is also changed in order to return the values to the new drop down menu. 

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Treat or not To Treat?</title>
+    <script type="module" defer src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="form">
+        <fieldset id="fieldset">
+            <legend>To Treat or not To Treat?</legend>
+            <div>
+                <label>How much money have you already spent this week?</label>
+                <input type="text" id="moneyAS" name="moneyAS" required>
+            </div>
+            <div>
+                <label>What did you buy for lunch?</label>
+                <select id="isLB" name="isLB">
+                    <option value="">---Lunch Options---</option>
+                    <option value="burrito">Burrito</option>
+                    <option value="pizza">Pizza</option>
+                    <option value="soupSalad">Soup and Salad</option>
+                    <option value="burger">Burger</option>
+                    <option value="none">None</option>
+                </select>
+                <span id="isLBError" class="error"></span>
+            </div>
+            <div>
+                <label>What drink do you want to buy?</label>
+                <select id="drinkChoice" name="drinkChoice">
+                    <option value="">---Drink Options---</option>
+                    <option value="coffee">Coffee</option>
+                    <option value="bobaTea">Boba Tea</option>
+                </select>
+                <span id="drinkChoiceError" class="error"></span>
+            </div>
+            <div id="drinkFlavorMenu">
+                <label>Select a flavor:</label>
+                <select name="drinkFlavor" id="drinkFlavor" required></select>
+            </div>
+            <div>
+                <label>Are you closing at work today?</label>
+                <select id="isCS" name="isCS">
+                    <option value="">---Please Select One---</option>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+                <span id="isCSError" class="error"></span>
+            </div>
+            <button type="submit">Submit</button>
+            <span id="submitError" class="error"></span>
+        </fieldset>
+    </form>
+    <div id="output">
+    </div>
+    <div id="tab-data">
+    </div>
+</body>
+</html>
