@@ -1,0 +1,2 @@
+## Identify the amount of waste that you recycle
+- I think that the best solution would be to set each recycling category as a checkbox. Either a drop down menu or another checkbox could represent not recycling. If you don't recycle, the rest of the checkboxes representing the categories of recycling should be disabled. By default, the total number of points in the recycling category should be 24. If the user engages in one or more of the different categories of recycling, the point value should be deducted by 4 for every checkbox ticked.
