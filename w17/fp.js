@@ -10,7 +10,10 @@ class FP {
     isDishAndWash,
     houseHoldPurchase,
     wasteProd,
-    recycle
+    recycle,
+    personal,
+    publicTrans,
+    flights
   ) {
     this.first = first;
     this.last = last;
@@ -23,6 +26,9 @@ class FP {
     this.houseHoldPurPoints = houseHoldPurchase;
     this.wasteProdPoints = wasteProd;
     this.recycle = recycle;
+    this.personalTransPoints = personal;
+    this.publicTransPoints = publicTrans;
+    this.flightsTransPoints = flights;
     this.calHouseHoldPoints();
     this.calHouseSizePoints();
     this.calFoodPoints();
@@ -92,7 +98,10 @@ class FP {
       this.totalWaterPoints +
       this.houseHoldPurPoints +
       this.wasteProdPoints +
-      this.recycle.recyclePoints;
+      this.recycle.recyclePoints +
+      this.personalTransPoints +
+      this.publicTransPoints +
+      this.flightsTransPoints;
   }
 }
 

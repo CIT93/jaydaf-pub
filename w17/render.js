@@ -69,6 +69,9 @@ const onUpdate = (index, data) => {
       FORM[15].value = isRecycleChecked(cfpData[index].recycle.alum, ALUM);
       FORM[16].value = isRecycleChecked(cfpData[index].recycle.steel, STEEL);
       FORM[17].value = isRecycleChecked(cfpData[index].recycle.comp, COMP);
+      FORM[19].value = String(data[index].personalTransPoints);
+      FORM[20].value = String(data[index].publicTransPoints);
+      FORM[21].value = String(data[index].flightsTransPoints);
       onUpdate(index, data); 
     })
     return td

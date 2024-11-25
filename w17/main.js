@@ -32,7 +32,10 @@ FORM.addEventListener("submit", e => {
       e.target.dishWash.checked,
       parseInt(e.target.purchase.value),
       parseInt(e.target.waste.value),
-      determineRecycleItems(e)
+      determineRecycleItems(e),
+      parseInt(e.target.personal.value),
+      parseInt(e.target.public.value),
+      parseInt(e.target.flights.value),
     );
     cfpData.push(fpObj);
     saveLS(cfpData);

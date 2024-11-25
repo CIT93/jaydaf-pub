@@ -109,6 +109,42 @@
                         </div>
                 </fieldset>
             </div>
+            <div>
+                <fieldset id="transField">
+                    <legend>Tally up Your Annual Transportation Scores:</legend>
+                        <div>
+                            <label>Personal Vehicle Usage:</label>
+                            <select name="personal" id="personal" required>
+                                <option value="">---How many miles do you travel each year?---</option>
+                                <option value="12">More than 15,000 miles per year</option>
+                                <option value="10">10,000 to 15,000 miles per year</option>
+                                <option value="6">1,000 to 10,000 miles per year</option>
+                                <option value="4">Less than 1,000 miles per year</option>
+                                <option value="0">Don't have a car</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label>Public Transportation:</label>
+                            <select name="public" id="public" required>
+                                <option value="">---How many miles do you travel each year?---</option>
+                                <option value="12">More than 20,000 miles per year</option>
+                                <option value="10">15,000 to 20,000 miles per year</option>
+                                <option value="6">10,000 to 15,000 miles per year</option>
+                                <option value="4">1,000 to 10,000 miles per year</option>
+                                <option value="0">Don't use public transportation</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label>Flights:</label>
+                            <select name="flights" id="flights" required>
+                                <option value="">---How far do you fly?---</option>
+                                <option value="2">Within state</option>
+                                <option value="6">Nearby state or country</option>
+                                <option value="20">Another continent</option>
+                            </select>
+                        </div>
+                </fieldset>
+            </div>
             <button type="submit">Submit</button>
             <span id="submitError" class="error"></span>
         </fieldset>
